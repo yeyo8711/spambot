@@ -1,4 +1,4 @@
-require('dotenv').config()
+require("dotenv").config();
 
 const { ethers } = require("ethers");
 
@@ -26,11 +26,9 @@ const address7 = "0x55d398326f99059fF775485246999027B3197955";
 const address8 = "0x55d398326f99059fF775485246999027B3197955";
 const address9 = "0x55d398326f99059fF775485246999027B3197955";
 
-
 const provider = new ethers.providers.JsonRpcProvider(RPC);
 // Make sure to change PKs in ENV file
 const signer = new ethers.Wallet(process.env.PK, provider);
-
 
 // create contract object using address, abi, and the signer
 const contract = new ethers.Contract(address1, ABI, signer);
@@ -43,38 +41,32 @@ const contract7 = new ethers.Contract(address7, ABI7, signer);
 const contract8 = new ethers.Contract(address8, ABI8, signer);
 const contract9 = new ethers.Contract(address9, ABI9, signer);
 
-
-//To create attach another contract just create the contract object 
+//To create attach another contract just create the contract object
 
 const main = async () => {
   setInterval(async () => {
-
     // replace with the function you need to call
 
     const call1 = await contract.poke(1);
-    const call2 = await contract2.poke(1);
-    const call3 = await contract3.poke(1);
-    const call4 = await contract4.poke(1);
-    const call5 = await contract5.poke(1);
-    const call6 = await contract6.poke(1);
-    const call7 = await contract7.poke(1);
-    const call8 = await contract8.poke(1);
-    const call9 = await contract9.poke(1);
+    console.log("call 1:", call1);
+    /* uncomment to use */
+    //const call2 = await contract2.poke(1);
+    //console.log("call 2:", call2);
+    //const call3 = await contract3.poke(1);
+    //console.log("call 3:", call3);
+    //const call4 = await contract4.poke(1);
+    //console.log("call 4:", call4);
+    //const call5 = await contract5.poke(1);
+    //console.log("call 5:", call5);
+    //const call6 = await contract6.poke(1);
+    //console.log("call 6:", call6);
+    //const call7 = await contract7.poke(1);
+    //console.log("call 7:", call7);
+    //const call8 = await contract8.poke(1);
+    //console.log("call 8:", call8);
+    //const call9 = await contract9.poke(1);
+    //console.log("call 9:", call9);
 
-    console.log("call 1:", call1)
-    console.log("call 2:", call2)
-    console.log("call 3:", call3)
-    console.log("call 4:", call4)
-    console.log("call 5:", call5)
-    console.log("call 6:", call6)
-    console.log("call 7:", call7)
-    console.log("call 8:", call8)
-    console.log("call 9:", call9)
-
-
-
-
-    
     // 1000 = 1 seconds
   }, 4000);
 };
