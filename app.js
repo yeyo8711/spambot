@@ -1,5 +1,10 @@
 require("dotenv").config();
-const server = http.createServer(process.env.PORT || 3000);
+const server = http.createServer(process.env.PORT || 8080);
+const express = require("express");
+
+const app = express();
+
+app.set("port", PORT);
 
 const { ethers } = require("ethers");
 
